@@ -3,6 +3,7 @@ package com.tbank.banking.application.backend.models;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -16,6 +17,12 @@ public class User {
 
     @Column(nullable = false, unique = true)
     private String username;
+
+    @Column(nullable = false)
+    private String password;
+
+    @Column(nullable = false)
+    private String email;
 
     public Long getId() {
         return id;
@@ -48,10 +55,4 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    @Column(nullable = false)
-    private String password;
-
-    @Column(nullable = false)
-    private String email;
 }
